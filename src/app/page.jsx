@@ -181,9 +181,9 @@ export default function Home() {
     data.headers = exactHeaders;
     data.row = rowData;
 
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwxNRlZo0yDpKe8QejOKwB_09oEKqb_RL8R6PL3vyWWBOa3IjVAig8TLMymSNPcThfN/exec";
+    const SCRIPT_URL = process.env.NEXT_PUBLIC_APPSCRIPT_URL;
 
-    if (SCRIPT_URL === "YOUR_APPS_SCRIPT_URL_HERE") {
+    if (!SCRIPT_URL || SCRIPT_URL === "YOUR_APPS_SCRIPT_URL_HERE") {
         setSuccess(true);
         setIsSubmitting(false);
         console.warn("MOCK SUBMIT: SCRIPT_URL not provided.");
