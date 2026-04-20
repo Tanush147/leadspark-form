@@ -9,7 +9,7 @@ export async function POST(request) {
       headers: {
         'Content-Type': 'application/json',
         'Cache-Control': 'no-cache',
-        'X-Api-Key': 'DB0LD9BWpp5VP2zoN5Aa3g'
+        'X-Api-Key': process.env.APOLLO_API_KEY
       },
       body: JSON.stringify(payload)
     });
